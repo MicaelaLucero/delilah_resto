@@ -5,5 +5,6 @@ const { getAuthorizationAdmin, getAuthorizationUser} = require("../../config/tok
 router.post("/", getAuthorizationUser, controller.create);
 router.put("/id/", getAuthorizationAdmin, controller.updateStatus);
 router.get("/", getAuthorizationAdmin, controller.getAll);
+router.delete("/id", getAuthorizationAdmin, controller.delete);
 
 module.exports = router;

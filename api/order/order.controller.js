@@ -51,6 +51,38 @@ module.exports = {
             })
         });
     },
+    delete: (req, res) => {
+        service.getOrderById ( req.body, (err, results) => {
+            if (results.length !==0) {
+                service.deleteOrderDetail(req.body, (err, results) => {
+                    if (err) {
+                        console.log(err);
+                        return res.status(500).json({
+                            success: 0,
+                            message: "Error deleting order detail"
+                        })
+                    }
+                })
+                service.deleteOrder(req.body, (err, results) => {
+                    if (err) {
+                        console.log(err);
+                        return res.status(500).json({
+                            success: 0,
+                            message: "Error deleting order"
+                        })
+                    }
+                })
+                return res.status(200).json({
+                    success: 1,
+                    data: results
+                })
+            }
+            return res.status(404).json({
+                success: 0,
+                message: "Order Not Found"
+            })
+        })
+    },
     updateStatus: (req, res) => {
         const body = req.body;
         const id_order = body.id_order;

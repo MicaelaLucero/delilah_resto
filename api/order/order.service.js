@@ -43,6 +43,42 @@ module.exports = {
             }
         );
     },
+    getOrderById: (data, callBack) => {
+        pool.query(
+            `SELECT * FROM \`orders\` WHERE id_order = ?`,
+            [ data.id_order ],
+            (error, results, fields) => {
+                if (error) {
+                    return callBack(error);
+                }
+                return callBack(null, results);
+            }
+        )
+    },
+    deleteOrder: (data, callBack) => {
+        pool.query(
+            `DELETE FROM \`orders\` WHERE id_order = ?`,
+            [ data.id_order ],
+            (error, results, fields) => {
+                if (error) {
+                    return callBack(error);
+                }
+                return callBack(null, results);
+            }
+        );
+    },
+    deleteOrderDetail: (data, callBack) => {
+        pool.query(
+            `DELETE FROM \`order_detail\` WHERE id_order = ?`,
+            [ data.id_order ],
+            (error, results, fields) => {
+                if (error) {
+                    return callBack(error);
+                }
+                return callBack(null, results);
+            }
+        );
+    },
     addDetail: (id_order, id_product, quantity, price, callBack) => {
         pool.query(
             `INSERT INTO \`order_detail\` VALUES(null, ?, ?, ?, ?)`,
