@@ -10,6 +10,7 @@ Api desarrollada para ser utilizada por un delivery de comidas.
 ### Pasos a seguir:
 
 1 - Ejecutar el siguiente comando desde la carpeta del proyecto:
+
    ```npm i bcrypt body-parser dotenv express jsonwebtoken mysql2 nodemon```
 
 2 - Copiar el contenido del archivo db.sql que está en la carpeta database y ejecutarlo en MySql Workbench.
@@ -25,17 +26,15 @@ Api desarrollada para ser utilizada por un delivery de comidas.
     MYSQL_DB=delilah  (nombre de la base de datos)
     JWT_SECRET=secret (se usa para obtener los jsonwebtoken para el login)
     ```
+    
 4 - Ejecutar:
+
     ```npm start```
 
 5- Desde Postman escribir las rutas con sus correspondientes recursos (GET, POST, PUT, DELETE). 
 
 Se requiere enviar los token recibidos en el login a través de la pestaña 
-Authorization, seleccionando el type "Bearer Token" y escribiendo solo el token que ha sido recibido,
-por ejemplo:
-
-```         eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWRfdXNlciI6MiwidXNlcm5hbWUiOiJMZW9uYXJkbyIsInRva2VuIjpudWxsLCJlbWFpbCI6Imxlb0BnbWFpbC5jb20iLCJuYW1lIjoiTGVvbmFyZG8iLCJsYXN0X25hbWUiOiJUdWxpYW4iLCJhZGRyZXNzIjoiQ29sw7NuIDQ1NiIsInBob25lIjoiMTE1NDM1NDM2NSIsImlkX3JvbGUiOjIsImlkX2NpdHkiOjN9LCJpYXQiOjE1OTc5NTYzMjcsImV4cCI6MTU5Nzk1OTkyN30.dBKdaEH25tCvrwgRlCbv00vU4nRIO6leYt3ZV5QN-H4
-```
+Authorization, seleccionando el type "Bearer Token" y escribiendo solo el token que ha sido recibido.
 
 ### Rutas:
   
