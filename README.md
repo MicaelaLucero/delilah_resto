@@ -15,6 +15,8 @@ Api desarrollada para ser utilizada por un delivery de comidas.
 2 - Copiar el contenido del archivo db.sql que está en la carpeta database y ejecutarlo en MySql Workbench.
 
 3 - Configurar las variables de entorno del archivo .env, por ejemplo:
+
+    ```
     APP_PORT=3000     (puerto que va a usar la api)
     DB_PORT=3306      (puerto configurado en su servidor de base de datos)
     DB_HOST=localhost (ip o dirección de la aplicacion del servidor de la api)
@@ -22,7 +24,7 @@ Api desarrollada para ser utilizada por un delivery de comidas.
     DB_PASS=1234      (la contraseña de su usuario)
     MYSQL_DB=delilah  (nombre de la base de datos)
     JWT_SECRET=secret (se usa para obtener los jsonwebtoken para el login)
-
+    ```
 4 - Ejecutar:
     ```npm start```
 
@@ -31,6 +33,7 @@ Api desarrollada para ser utilizada por un delivery de comidas.
 Se requiere enviar los token recibidos en el login a través de la pestaña 
 Authorization, seleccionando el type "Bearer Token" y escribiendo solo el token que ha sido recibido,
 por ejemplo:
+
 ```         eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWRfdXNlciI6MiwidXNlcm5hbWUiOiJMZW9uYXJkbyIsInRva2VuIjpudWxsLCJlbWFpbCI6Imxlb0BnbWFpbC5jb20iLCJuYW1lIjoiTGVvbmFyZG8iLCJsYXN0X25hbWUiOiJUdWxpYW4iLCJhZGRyZXNzIjoiQ29sw7NuIDQ1NiIsInBob25lIjoiMTE1NDM1NDM2NSIsImlkX3JvbGUiOjIsImlkX2NpdHkiOjN9LCJpYXQiOjE1OTc5NTYzMjcsImV4cCI6MTU5Nzk1OTkyN30.dBKdaEH25tCvrwgRlCbv00vU4nRIO6leYt3ZV5QN-H4
 ```
 
